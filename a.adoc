@@ -1,0 +1,68 @@
+= N005-trying-asciidoc
+Frans Lundberg
+:description: Notes taken while testing asciidoc.
+:source-highlighter: pygments
+
+
+== Intro
+
+Asciidoc and ascidoctor tool tested by Frans Lundberg 2021-09-22.
+Inspired by the beatiful and well-organised documentation for Raspberry Pi Pico.
+Possible for general use by PPISW and in particular for NFC Lock project
+and "Complete Works" report.
+
+
+
+== Conclusions
+
+Seems really good! Easy to get started, HTML/PDF output. Code syntax highlights.
+Include other files. Include data from CSV files. Include source code lines
+from repo. Really cool! Seems perfect for auto-generated content.
+
+Works really well. At least on Ubuntu (f8). How about Windows?
+
+
+
+== Commands
+
+To install:
+
+    sudo apt-get install -y asciidoctor
+    sudo gem install asciidoctor-pdf --pre      // For PDF support
+
+To generate output:
+
+    asciidoctor a.adoc
+    asciidoctor-pdf a.adoc
+
+That is it! Defaults look OK.
+
+
+
+== On Github
+
+Putting this file on Github.
+
+
+
+== C language syntax highlight
+
+Install with:
+
+    sudo gem install pygments.rb
+
+Then add the following line to document header.
+
+    :source-highlighter: pygments
+
+Some C code:
+
+[source,c]
+----
+#include <stdio.h>
+int main() {
+   printf("Hello, World!");
+   return 0;
+}
+----
+
